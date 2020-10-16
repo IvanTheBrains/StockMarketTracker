@@ -89,7 +89,7 @@ class Stock_object:
 			if old_price_value == new_price_value:
 				while old_price_value == new_price_value:
 					request = requests.get(url=self.url, headers=headers)
-					print(f"[response] - {request.status_code}") # Can comment it. Just for debugging
+					#print(f"[response] - {request.status_code}") # You can uncomment it. Just for debugging
 					data = request.text
 					soup = BeautifulSoup(markup=data, features="lxml")
 					new_price_value = soup.find(name='div', attrs={'class', 'js-price-close'}).text
